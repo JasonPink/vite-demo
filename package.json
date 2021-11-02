@@ -5,7 +5,9 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "release": "standard-version",
+    "release:first": "standard-version -r 1.0.0"
   },
   "dependencies": {
     "@vitejs/plugin-vue": "^1.9.4",
@@ -15,6 +17,8 @@
     "vuex": "^4.0.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^14.1.0",
+    "@commitlint/config-conventional": "^14.1.0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "autoprefixer": "^10.4.0",
     "babel-eslint": "^10.1.0",
@@ -23,6 +27,7 @@
     "eslint": "^8.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.0.3",
+    "husky": "^7.0.4",
     "naive-ui": "^2.20.1",
     "postcss": "^8.3.11",
     "prettier": "^2.4.1",
@@ -34,5 +39,19 @@
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
     }
-  }
+  },
+
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,css,vue,jsx}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  },
+  "standard-version": {}
 }
