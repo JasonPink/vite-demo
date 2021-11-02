@@ -1,0 +1,10 @@
+@import './mixins.scss';
+
+body {
+  color: $primary-color;
+}
+img {
+  width: 100px;
+  color: red;
+  border: 1px solid currentColor;
+}
