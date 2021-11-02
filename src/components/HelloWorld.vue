@@ -1,20 +1,24 @@
-<script setup>
-import style from "../style/message.module.css"
-import { ref } from "vue"
+<script>
+import { ref, defineComponent, defineProps } from 'vue'
+import { NButton } from 'naive-ui'
+import test from './test.jsx'
 
 defineProps({
   msg: String,
 })
 
 const count = ref(0)
-
-console.log("2222")
-console.log("343434")
+export default defineComponent({
+  components: {
+    NButton,
+  },
+})
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
-
+  <n-button type="info">naive-ui</n-button>
+  <test></test>
   <p>
     Recommended IDE setup:
     <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>
@@ -40,5 +44,15 @@ console.log("343434")
 <style lang="scss" scoped>
 a {
   color: green;
+}
+.name {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  line-height: 100px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 26px;
+  background: #4098fc;
 }
 </style>
