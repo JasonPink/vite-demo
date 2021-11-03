@@ -1,13 +1,11 @@
 <script>
-import { ref, defineComponent, defineProps } from 'vue'
+import { defineComponent, defineProps } from 'vue'
 import { NButton } from 'naive-ui'
-import test from './test.jsx'
 
 defineProps({
   msg: String,
 })
 
-const count = ref(0)
 export default defineComponent({
   components: {
     NButton,
@@ -34,7 +32,7 @@ export default defineComponent({
     <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Documentation</a>
   </p>
 
-  <button type="button" @click="count++">count is: {{ count }}</button>
+  <button type="button">count is: {{ 1 }}</button>
   <p>
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.
