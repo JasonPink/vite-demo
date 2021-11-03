@@ -15,7 +15,7 @@ export default defineComponent({
 
 <template>
   <h1>{{ msg }}</h1>
-  <n-button type="info">naive-ui</n-button>
+  <n-button type="info">naivesss-ui</n-button>
   <test></test>
   <p>
     Recommended IDE setup:
