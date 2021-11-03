@@ -8,6 +8,7 @@
     "commit": "git-cz",
     "release": "standard-version",
     "release:first": "standard-version -r 1.0.0"
+
   },
   "dependencies": {
     "@vitejs/plugin-vue": "^1.9.4",
@@ -32,6 +33,7 @@
     "postcss": "^8.3.11",
     "prettier": "^2.4.1",
     "sass": "^1.43.4",
+    "standard-version": "^9.3.2",
     "typescript": "^3.9.7",
     "vite": "^2.6.4"
   },
@@ -40,7 +42,6 @@
       "path": "node_modules/cz-conventional-changelog"
     }
   },
-
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
@@ -48,10 +49,9 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,css,vue,jsx}": [
-      "vue-cli-service lint",
+    "src/**/*.{js,css,vue,jsx,tsx,ts}": [
+      "prettier --write",
       "git add"
     ]
-  },
-  "standard-version": {}
+  }
 }
