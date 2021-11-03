@@ -3,13 +3,13 @@ import { defineComponent, defineProps } from 'vue'
 import { NButton } from 'naive-ui'
 
 defineProps({
-  msg: String,
+  msg: String
 })
 
 export default defineComponent({
   components: {
-    NButton,
-  },
+    NButton
+  }
 })
 </script>
 
@@ -25,9 +25,7 @@ export default defineComponent({
   </p>
 
   <p>
-    <a href="https://vitejs.dev/guide/features.html" target="_blank">
-      Vite Documentation
-    </a>
+    <a href="https://vitejs.dev/guide/features.html" target="_blank"> Vite Documentation </a>
     |
     <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Documentation</a>
   </p>
