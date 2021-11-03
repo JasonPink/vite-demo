@@ -38,6 +38,11 @@
     "typescript": "^3.9.7",
     "vite": "^2.6.4"
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
