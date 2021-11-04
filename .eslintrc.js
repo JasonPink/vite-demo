@@ -4,17 +4,21 @@ module.exports = {
     es2021: true
   },
   extends: [
+    'eslint:recommended',
     'plugin:vue/vue3-recommended',
-    // 'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended',
     'airbnb-base',
     'prettier',
     'plugin:prettier/recommended'
   ],
-
+  parser: 'vue-eslint-parser',
   parserOptions: {
     ecmaVersion: 13,
     parser: '@typescript-eslint/parser',
-    sourceType: 'module'
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true
+    }
   },
   plugins: ['vue', '@typescript-eslint'],
   rules: {
@@ -23,6 +27,7 @@ module.exports = {
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'import/no-unresolved': 0,
     'vue/no-multiple-template-root': 0,
+    'import/no-absolute-path': 0,
     'no-param-reassign': [
       'error',
       {
