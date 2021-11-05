@@ -11,13 +11,25 @@
   <p>{{ age }}</p>
 </template>
 <script lang="ts">
-import { defineComponent, reactive, toRefs, onBeforeMount, onMounted, watch } from 'vue'
+import {
+  defineComponent,
+  reactive,
+  toRefs,
+  onBeforeMount,
+  onMounted,
+  onBeforeUpdate,
+  onUpdated,
+  onBeforeUnmount,
+  onUnmounted,
+  watch
+} from 'vue'
 import useCount from '/@/hooks/useCount'
 
 export default defineComponent({
   setup() {
     const { count, multiple, increase, decrease } = useCount(10)
     // const count: number = ref(1)
+
     const user: object = reactive({
       name: 'yemeng',
       age: 26
@@ -28,6 +40,18 @@ export default defineComponent({
     onMounted(() => {
       console.log(`---onMounted---`)
     })
+    onBeforeUpdate(() => {
+      console.log(`---onBeforeUpdate---`)
+    })
+    onUpdated(() => {
+      console.log(`---onUpdated---`)
+    })
+    onBeforeUnmount(() => {
+      console.log(`---onBeforeUnmount---`)
+    })
+    onUnmounted(() => {
+      console.log(`---onUnmounted---`)
+    })
     watch(
       () => user.age,
       (curAge, preAge) => {
@@ -35,9 +59,6 @@ export default defineComponent({
       }
     )
 
-    setInterval(() => {
-      user.age++
-    }, 1000)
     return {
       count,
       multiple,

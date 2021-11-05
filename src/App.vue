@@ -1,11 +1,7 @@
-<script setup>
-import HelloWorld from '/@/components/HelloWorld.vue'
-import TodoList from '/@/components/TodoList.vue'
-</script>
-
 <template>
-  <HelloWorld msg="Hello Vue 3 + Vite" />
-  <TodoList />
+  <router-link to="/home">home</router-link>
+  <router-link to="/todo">todo</router-link>
+  <router-view></router-view>
 </template>
 
 <style>

@@ -1,14 +1,14 @@
 <template>
-  <h1>home！！！！</h1>
-  <HelloWorld />
+  <h1>todo</h1>
+  <TodoList></TodoList>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
-import HelloWorld from '/@/components/HelloWorld.vue'
+import TodoList from '/@/components/TodoList.vue'
 
 export default defineComponent({
   components: {
-    HelloWorld
+    TodoList
   }
 })
 </script>
