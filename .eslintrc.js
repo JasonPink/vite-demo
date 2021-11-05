@@ -30,6 +30,7 @@ module.exports = {
     'vue/no-multiple-template-root': 0,
     'import/no-absolute-path': 0,
     'import/extensions': 0,
+    'import/prefer-default-export': 0,
     'no-param-reassign': [
       'error',
       {

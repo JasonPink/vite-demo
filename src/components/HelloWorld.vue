@@ -9,6 +9,7 @@
     {{ name }}
   </p>
   <p>{{ age }}</p>
+  <div v-for="(item, index) in dayList" :key="index">{{ item }}</div>
 </template>
 <script lang="ts">
 import {
@@ -24,16 +25,17 @@ import {
   watch
 } from 'vue'
 import useCount from '/@/hooks/useCount'
+import { lastNday } from '/@/utils/date'
 
 export default defineComponent({
   setup() {
     const { count, multiple, increase, decrease } = useCount(10)
-    // const count: number = ref(1)
 
     const user: object = reactive({
       name: 'yemeng',
       age: 26
     })
+    const dayList: string[] = reactive(lastNday(4, false))
     onBeforeMount(() => {
       console.log(`---onBeforeMount---`)
     })
@@ -64,6 +66,7 @@ export default defineComponent({
       multiple,
       increase,
       decrease,
+      dayList,
       ...toRefs(user)
     }
   }
