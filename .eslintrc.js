@@ -23,6 +23,7 @@ module.exports = {
   plugins: ['vue', '@typescript-eslint'],
   rules: {
     'no-console': 'off',
+    'no-plusplus': 0,
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'import/no-unresolved': 0,
