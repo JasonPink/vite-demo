@@ -1,5 +1,5 @@
-import { create, NButton, NInput } from 'naive-ui'
+import { create, NButton, NInput, NRadioGroup, NRadioButton } from 'naive-ui'
 
 export default create({
-  components: [NButton, NInput]
+  components: [NButton, NInput, NRadioGroup, NRadioButton]
 })
