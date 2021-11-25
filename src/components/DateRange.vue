@@ -44,7 +44,7 @@ export default defineComponent({
     const currentDate = computed({
       get: () => dateList[currentIndex.value].value,
       set: val => {
-        console.log(val)
+        console.log(val, '123')
       }
     })
 
